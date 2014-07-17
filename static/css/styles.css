@@ -1,0 +1,73 @@
+body {background: #f2f2f2;}
+
+h1 {font-size: 1.7rem;}
+
+h1, h2, h3, h4, h5, h6 {color: #222222;}
+p, li {color: #707070; font-size: 13px;}
+a {color: #1ABC9C;}
+a:hover {color: #16a085;}
+.subheader {color: #707070;}
+
+
+article h1 {color: #1ABC9C;}
+article h2 {font-size: 1.4375rem; color: #11806a;}
+article h4 {margin-bottom: 3px;}
+article img {border-radius: 8px; margin-bottom: 10px;}
+#main hr{border-style: dashed;}
+#main hr:last-of-type {border: 0;}
+
+
+div.panel {background: #fff; border: 1px solid #DDD;}'
+
+#content {min-height: 500px;}
+
+
+#footer {background: #95a5a6;padding-top: 15px;}
+footer.row ul {margin-left: 0;}
+footer.row h6 {color: #fff;}
+footer.row a {color: #fff;}
+footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
+
+
+#header {background: #FFF;padding: 10px 0 25px; border-bottom: 3px solid #1ABC9C;}
+.top-bar {background: #FFF;}
+.top-bar-section ul li {background: #FFF; font-variant: small-caps;}
+.top-bar-section li:not(.has-form) a:not(.button) {background: transparent; border-radius: 8px;}
+
+.top-bar-section ul li a {color: #1ABC9C; font-size: 0.9rem;}
+.top-bar-section li:not(.has-form) a:not(.button):hover {color: #1ABC9C;}
+.top-bar .name h1 a {color: #1ABC9C;}
+.top-bar.expanded .title-area {background: #1ABC9C; border-bottom: 2px solid #1ABC9C;}
+.top-bar .toggle-topbar.menu-icon a {color:#1abc9C;}
+.top-bar .toggle-topbar.menu-icon a span:after {box-shadow: 0 0 0 1px #1abc9C, 0 7px 0 1px #1abc9C, 0 14px 0 1px #1abc9C;}
+
+
+@media only screen and (max-width:40em) { 
+    #header {padding: 0;}
+    #header .columns {padding: 0;}
+    .top-bar-section li:not(.has-form) a:not(.button){border-radius: 0;}
+}
+
+
+.social {padding-bottom: 15px;}
+.social a {color: #1ABC9C;}
+.social a:hover {color: #16a085;}
+
+#welcome h3, #welcome p {text-align: center; color: #fff;}
+#welcome .panel {background: #1ABC9C;padding: 10px; border-radius: 12px; margin-top: 10px;}
+
+
+#sidebar .panel {padding: 12px;}
+#sidebar ul {margin-left: 0;}
+#sidebar h6{font-variant: small-caps; font-size: 13px; font-weight: 600;color: #1ABC9C; margin-bottom: 5px; text-align: center;}
+#sidebar li {font-size: 12px; margin-top: 5px; margin-bottom: 5px;list-style: none; padding-left: 0;}
+#sidebar li a {padding: 0; color: #707070;}
+#sidebar ul li a:hover {color: #404040;}
+#sidebar hr { border-color: #DDD; border-style: dashed;margin: 8px 0;}
+
+
+.info {padding-top: 4px;padding-bottom: 4px; margin-bottom: 5px;}
+.info ul.tags {margin-top: 5px;}
+.info li {font-size: 11.5px; color: #a5a5a5; padding-bottom: 0;}
+.info li strong {color: #1ABC9C;}
+.info span a {color: #707070; font-weight: 500;}
