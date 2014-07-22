@@ -2,6 +2,10 @@ body {background: #f2f2f2;}
 
 .row {max-width: 58em;}
 
+#main {min-height: 400px;}
+#main hr{border-style: dashed;}
+#main hr:last-of-type {border: 0;}
+
 h1 {font-size: 1.7rem;}
 
 h1, h2, h3, h4, h5, h6 {color: #222222;}
@@ -18,8 +22,7 @@ article img {border-radius: 8px; margin-bottom: 10px;}
 article table {margin-top: 10px;}
 article table tr th, article table tr td {padding: 9px 12px;}
 article table tr th {background: rgba(25, 188, 156, 0.8); text-align: center; color: #fff;}
-#main hr{border-style: dashed;}
-#main hr:last-of-type {border: 0;}
+
 
 
 div.panel {background: #fff; border: 1px solid #DDD;}'
@@ -34,35 +37,36 @@ footer.row a:hover {color: #1ABC9C;}
 footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
 
 
-#header {background: #FFF;padding: 10px 0 25px; border-bottom: 3px solid #1ABC9C;}
-.top-bar {background: #FFF;}
-.top-bar-section ul li {background: #FFF; font-variant: small-caps;}
+#header {background: #f5f5f5 url('../images/wire.jpg')right center no-repeat; padding: 10px 0 25px; border-bottom: 3px solid #1ABC9C;}
+.top-bar {background: transparent;}
+.top-bar-section ul {margin-top: 4px;}
+.top-bar-section ul li {background: transparent; font-variant: small-caps; margin-left: 8px;}
 .top-bar-section li:not(.has-form) a:not(.button) {background: transparent; border-radius: 8px;}
 
-.top-bar-section ul li a {color: #1ABC9C; font-size: 0.9rem;}
-.top-bar-section li:not(.has-form) a:not(.button):hover {color: #1ABC9C;}
-.top-bar .name h1 a {color: #1ABC9C;}
+.top-bar-section ul li a {color: #fff; font-size: 1rem;}
+.top-bar-section li:not(.has-form) a:not(.button):hover {color: #fff; background: #1ABC9C;}
+.top-bar .name h1 {font-size: 1.8rem;font-family: 'Lobster', cursive;}
+.top-bar .name h1 a {color: #fff;}
+.top-bar .name h1 white {color: #fff; font-size: 30px;font-family:"Helvetica Neue","Helvetica"; }
+.top-bar .name h1 red {color: #e74c3c;font-size: 40px; font-family:"Helvetica Neue","Helvetica"; vertical-align: middle;}
 
-.top-bar .toggle-topbar.menu-icon a {color:#1abc9C;}
-.top-bar .toggle-topbar.menu-icon a span:after {box-shadow: 0 0 0 1px #1abc9C, 0 7px 0 1px #1abc9C, 0 14px 0 1px #1abc9C;}
+.top-bar .toggle-topbar.menu-icon a {color:#fff;}
+.top-bar .toggle-topbar.menu-icon a span:after {box-shadow: 0 0 0 1px #fff, 0 7px 0 1px #fff, 0 14px 0 1px #fff;}
 
 .top-bar.expanded .title-area {background: #1ABC9C; border-bottom: 2px solid #1ABC9C;}
 .top-bar.expanded h1 a {color: #fff;}
-.top-bar.expanded .toggle-topbar.menu-icon a {color:#fff;}
-.top-bar.expanded .toggle-topbar.menu-icon a span:after {box-shadow: 0 0 0 1px #fff, 0 7px 0 1px #fff, 0 14px 0 1px #fff;}
-
 
 
 @media only screen and (max-width:40em) { 
     #header {padding: 0;}
     #header .columns {padding: 0;}
     .top-bar-section li:not(.has-form) a:not(.button){border-radius: 0;}
+    .top-bar-section ul li {margin-left: 0px;}
 }
 
 
 .social {padding-bottom: 15px;}
-.social a {color: #1ABC9C;}
-.social a:hover {color: #16a085;}
+.social a {color: #fff;}
 
 #welcome h3, #welcome p {text-align: center; color: #fff;}
 #welcome .panel {background: #1ABC9C;padding: 10px; border-radius: 12px; margin-top: 10px;}
@@ -85,3 +89,6 @@ footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
 
 ul.circle li {font-size: 18px; font-weight: 500; font-variant: small-caps;}
 ul.square li {font-size: 13px; font-variant: normal;}
+
+#label .label{font-size: 1rem; padding: 8px 12px;margin: 5px; font-variant: small-caps;
+}

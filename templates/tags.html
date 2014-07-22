@@ -2,16 +2,11 @@
 {% block welcome %}{% endblock %}
 {% block content %}
 
-<h3>Tags</h3>
 
-<ul class="circle">
+<div id="label" class="large-10 medium-10 medium-centered large-centered columns">
+    <h3>Tags</h3>
     {% for tag, articles in tags|sort %}
-    <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>
-    <ul class="square">
-        {% for article in articles|sort %}
-        <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</li>
-        {% endfor %}
-    </ul>
+        <span class="label secondary round"><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></span> 
     {% endfor %}
-</ul>
+</div>
 {% endblock %}
