@@ -144,11 +144,13 @@
             </div>
     </footer>
 </div>
-
 <script src="{{ SITEURL }}/{{THEME_STATIC_DIR}}/js/vendor/jquery.js"></script>
 <script src="{{ SITEURL }}/{{THEME_STATIC_DIR}}/js/foundation.min.js"></script>
 <script>
  $(document).foundation();
 </script>
+{% include 'analytics.html' %}
+{% include 'piwik.html' %}
+{% include 'disqus_script.html' %}
 
 </body>

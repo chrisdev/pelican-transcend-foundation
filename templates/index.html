@@ -24,7 +24,7 @@
                         {% endif %}
                     </ul>
                 </div>
-                <img src="{{ article.thumbnail }}" alt={{ article.title }} >
+                <img src="{{ article.thumbnail }}" atl="{{ article.title|striptags }}">
                 {{ article.summary }}
                 {% include 'comments.html' %}
                 <a class="button radius tiny success right" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
