@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/foundation-icons.css">
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/styles.css">
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygment.css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
     {% if FEED_ALL_ATOM %}
      <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
@@ -40,32 +41,22 @@
         {% endif %}
     </div>
     <div class="row">
-        <div class="large-4 medium-4 hide-for-small columns">
-            <a href="/"><img src="{{ SITEURL }}/{{THEME_STATIC_DIR }}/images/chris_dev_topbar_logo.png" alt="ChrisDev" /></a>
-        </div>
-        <div class="large-8 medium-8 small-12 columns">
+        <div class="large-12 columns">
             <nav class="top-bar" data-topbar>
-              <ul class="title-area show-for-small">
-                <li class="name">
-                <h1><a href="/">{{ SITENAME }}</a></h1>
+              <ul class="title-area">
+                <li class="name hide-for-small">
+                    <h1><a href="/"><!--<white>{</white>&nbsp;<red>*</red>&nbsp;<white>}</white>&nbsp;-->{{ SITENAME }}</a></h1>
                 </li>
                 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
               </ul>
             
               <section class="top-bar-section">
                 <ul class="right">
-                  {% if DISPLAY_PAGES_ON_MENU %}
-                    {% for page in PAGES %}
-                        <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
-                    {% endfor %}
-                  {% endif %}
-
-                  {% if DISPLAY_CATEGORIES_ON_MENU %}
-                    {% for cat, null in categories %}
-                        <li{% if cat == category %} class="active"{% endif %}>
-                        <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-                    {% endfor %}
-                  {% endif %}
+                  <li><a href="/">Home</a></li>
+                  <li><a href="{{ SITEURL }}/archives.html">Archives</a></li>
+                  <li><a href="{{ SITEURL }}/tags.html">Tags</a></li>
+                  <li><a href="{{ SITEURL }}/categories.html">Categories</a></li>
+                  <li><a href="http://www.chrisdev.com/contact_us/" target="_blank">Contact Us</a></li>
                 </ul>
               </section>
             </nav>
@@ -76,74 +67,21 @@
 <!-- End Nav -->
 
 
-<!-- Main Page Content and Sidebar -->
+<!-- Main Page Content -->
 <div class="row" style="margin-top: 15px;">
-    
-
-    <!-- Main Blog Content -->
-    <div id="main" class="large-12 columns">
-        {% block welcome %}
-            <div id="welcome" class="large-8 medium-10 medium-centered large-centered columns">
-                <div class="panel radius">
-                    <h3>{{ SITENAME }}</h3>
-                    <p>{{ SITE_DESCRIPTION }}</p> 
+        <div id="main" class="large-12 columns">
+            {% block welcome %}
+                <div id="welcome" class="large-8 medium-10 medium-centered large-centered columns">
+                    <div class="panel radius">
+                        <h3>{{ SITENAME }}</h3>
+                        <p>{{ SITE_DESCRIPTION }}</p> 
+                    </div>
                 </div>
-            </div>
-        {% endblock %}
-        {% block content %}{% endblock %}
-    </div>
-    <!-- End Main Content -->
-
-    <!-- Sidebar 
-    <aside id="sidebar" class="large-3 medium-3 columns">
-        <div class="panel radius">
-            <ul>
-                <h6>Site</h6>
-                <li><a href="{{ SITEURL }}/archives.html">Archives</a></li>
-                <li><a href="{{ SITEURL }}/tags.html">Tags</a></li>
-                {% if FEED_RSS %}
-                    <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" rel="alternate">Atom feed</a></li>
-                {% endif %}
-                {% if FEED_RSS %}
-                    <li><a href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" rel="alternate">RSS feed</a></li>
-                {% endif %}
-                
-                <hr>
-                                
-                {% if categories %}
-                    <h6>Categories</h6>
-                    {% for cat, null in categories %}
-                        <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-                    {% endfor %}
-                {% endif %}
-                
-               <hr>
-                                
-                {% if LINKS %}
-                    <h6>Links</h6>
-                    {% for name, link in LINKS %}
-                        <li><a href="{{ link }}">{{ name }}</a></li>
-                    {% endfor %}
-                {% endif %} 
-                
-                <hr> 
-                                    
-                {% if SOCIAL %}
-                    <h6>Social</h6>
-                    {% for name, link in SOCIAL %}
-                        <li><a href="{{ link }}"><i class="fi-social-{{ name }}"></i>&nbsp;{{ name }}</a></li>
-                    {% endfor %}
-                {% endif %}
-                
-                <hr>
-                
-                <li><a href="/feed/all.atom.xml"><i class="fi-rss"></i>&nbsp; Subcribe to my feed</a></li>
-            </ul>
+            {% endblock %}
+            {% block content %}{% endblock %}
         </div>
-        
-    </aside>--> <!-- End Sidebar -->
-
-</div> <!-- End Main Content and Sidebar -->
+</div> 
+ <!-- End Main Content -->
 
 
 <!-- Footer -->
