@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" >
-    <meta <meta name="description" content="{{ SITE_DESCRIPTION }}">
+    <meta name="description" content="{{ SITE_DESCRIPTION }}">
     <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/foundation.css">
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/foundation-icons.css">
@@ -60,7 +60,7 @@
                     {% endfor %}
                   {% endif %}
 
-                  {% if DISPLAY_CATEGORIES_ON_MENU -%}
+                  {% if DISPLAY_CATEGORIES_ON_MENU %}
                     {% for cat, null in categories %}
                         <li{% if cat == category %} class="active"{% endif %}>
                         <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
