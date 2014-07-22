@@ -2,19 +2,25 @@
 <head>
     <meta charset="utf-8" />
     <!-- Set the viewport width to device width for mobile -->
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width" >
+    <meta <meta name="description" content="{{ SITE_DESCRIPTION }}">
+    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/foundation.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/foundation-icons.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/styles.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygment.css">
 
-    <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
-    <link rel="stylesheet" href="{{ SITEURL }}theme/css/foundation.css">
-    <link rel="stylesheet" href="{{ SITEURL }}theme/css/foundation-icons.css">
-    <link rel="stylesheet" href="{{ SITEURL }}theme/css/styles.css">
-    <link rel="stylesheet" href="{{ SITEURL }}theme/css/pygment.css">
-   
+    {% if FEED_ALL_ATOM %}
+     <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+    {% endif %}
+    {% if FEED_ALL_RSS %}
+      <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+    {% endif %} 
+    
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/vendor/modernizr.js"></script>
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    
-    <script src="{{ SITEURL }}theme/js/vendor/modernizr.js"></script>
 </head>
 
 <body>
@@ -23,33 +29,43 @@
 
 <div id="header" data-magellan-expedition="fixed">
     <div class="row hide-for-small">
+        {% if SOCIAL %}
         <div class="social large-12 columns">
             <li style="float: right; text-align: right; font-size: 22px; list-style: none;">
-                <a href="#"><i class="fi-social-facebook"></i></a>
-                <a href="#"><i class="fi-social-twitter"></i></a>
-                <a href="#"><i class="fi-social-linkedin"></i></a>
-                <a href="#"><i class="fi-social-youtube"></i></a>
+             {% for name, link in SOCIAL %}
+                <a href="{{ link }}"><i class="fi-social-{{ name }}"></i></a>
+             {% endfor %}
             </li>
         </div>
+        {% endif %}
     </div>
     <div class="row">
         <div class="large-4 medium-4 hide-for-small columns">
-            <a href="/"><img src="{{ SITEURL }}theme/images/chris_dev_topbar_logo.png" alt="" /></a>
+            <a href="/"><img src="{{ SITEURL }}/{{THEME_STATIC_DIR }}/images/chris_dev_topbar_logo.png" alt="ChrisDev" /></a>
         </div>
         <div class="large-8 medium-8 small-12 columns">
             <nav class="top-bar" data-topbar>
               <ul class="title-area show-for-small">
                 <li class="name">
-                  <h1><a href="/">Chris Dev Blog</a></h1>
+                <h1><a href="/">{{ SITENAME }}</a></h1>
                 </li>
                 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
               </ul>
             
               <section class="top-bar-section">
                 <ul class="right">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="http://www.chrisdev.com/about_us/">About Us</a></li>
-                  <li><a href="http://www.chrisdev.com/contact_us/">Contact Us</a></li>
+                  {% if DISPLAY_PAGES_ON_MENU %}
+                    {% for page in PAGES %}
+                        <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+                    {% endfor %}
+                  {% endif %}
+
+                  {% if DISPLAY_CATEGORIES_ON_MENU -%}
+                    {% for cat, null in categories %}
+                        <li{% if cat == category %} class="active"{% endif %}>
+                        <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                    {% endfor %}
+                  {% endif %}
                 </ul>
               </section>
             </nav>
@@ -69,8 +85,8 @@
         {% block welcome %}
             <div id="welcome" class="large-8 medium-10 medium-centered large-centered columns">
                 <div class="panel radius">
-                    <h3>Welcome To ChrisDev Blog</h3>
-                    <p>I am Christopher Clarke and I write about python.</p>
+                    <h3>{{ SITENAME }}</h3>
+                    <p>{{ SITE_DESCRIPTION }}</p> 
                 </div>
             </div>
         {% endblock %}
@@ -83,8 +99,8 @@
         <div class="panel radius">
             <ul>
                 <h6>Site</h6>
-                <li><a href="{{ SITEURL }}archives.html">Archives</a></li>
-                <li><a href="{{ SITEURL }}tags.html">Tags</a></li>
+                <li><a href="{{ SITEURL }}/archives.html">Archives</a></li>
+                <li><a href="{{ SITEURL }}/tags.html">Tags</a></li>
                 {% if FEED_RSS %}
                     <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" rel="alternate">Atom feed</a></li>
                 {% endif %}
@@ -97,7 +113,7 @@
                 {% if categories %}
                     <h6>Categories</h6>
                     {% for cat, null in categories %}
-                        <li><a href="{{ SITEURL }}{{ cat.url }}">{{ cat }}</a></li>
+                        <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
                     {% endfor %}
                 {% endif %}
                 
@@ -151,8 +167,8 @@
     </footer>
 </div>
 
-<script src="{{ SITEURL }}theme/js/vendor/jquery.js"></script>
-<script src="{{ SITEURL }}theme/js/foundation.min.js"></script>
+<script src="{{ SITEURL }}/{{THEME_STATIC_DIR}}/js/vendor/jquery.js"></script>
+<script src="{{ SITEURL }}/{{THEME_STATIC_DIR}}/js/foundation.min.js"></script>
 <script>
  $(document).foundation();
 </script>
