@@ -81,7 +81,7 @@
     
 
     <!-- Main Blog Content -->
-    <div id="main" class="large-9 medium-9 columns">
+    <div id="main" class="large-12 columns">
         {% block welcome %}
             <div id="welcome" class="large-8 medium-10 medium-centered large-centered columns">
                 <div class="panel radius">
@@ -94,7 +94,7 @@
     </div>
     <!-- End Main Content -->
 
-    <!-- Sidebar -->
+    <!-- Sidebar 
     <aside id="sidebar" class="large-3 medium-3 columns">
         <div class="panel radius">
             <ul>
@@ -141,7 +141,7 @@
             </ul>
         </div>
         
-    </aside> <!-- End Sidebar -->
+    </aside>--> <!-- End Sidebar -->
 
 </div> <!-- End Main Content and Sidebar -->
 
@@ -149,6 +149,45 @@
 <!-- Footer -->
 <div id="footer">
     <footer class="row">
+            <div class="large-3 medium-3 small-6 columns">
+                <h6>Site</h6>
+                <ul>
+                <li><a href="{{ SITEURL }}/archives.html">Archives</a></li>
+                <li><a href="{{ SITEURL }}/tags.html">Tags</a></li>
+                </ul>
+            </div>
+            <div class="large-3 medium-3 small-6 columns">
+             {% if categories %}
+                <h6>Categories</h6>
+                    <ul>
+                    {% for cat, null in categories %}
+                        <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                    {% endfor %}
+                    </ul>
+             {% endif %} 
+            </div>
+            <div class="large-3 medium-3 small-6 columns">
+                {% if LINKS %}
+                    <h6>Links</h6>
+                    <ul>
+                        {% for name, link in LINKS %}
+                            <li><a href="{{ link }}">{{ name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %} 
+            </div>
+            <div class="large-3 medium-3 small-6 columns">
+                {% if SOCIAL %}
+                    <h6>Social</h6>
+                    <ul>
+                        {% for name, link in SOCIAL %}
+                            <li><a href="{{ link }}"><i class="fi-social-{{ name }}"></i>&nbsp;{{ name }}</a></li>
+                        {% endfor %}
+                            <li><a href="/feed/all.atom.xml"><i class="fi-rss"></i>&nbsp; Subcribe to my feed</a></li>
+                    </ul>
+                {% endif %}
+            </div>
+            <hr>
             <div class="large-6 medium-6 columns">
                 <h6><strong>Contact Us</strong></h6>                                             
                 <ul>                                                                             
@@ -157,7 +196,7 @@
                     <li>Email:&nbsp;<a href="mailto:cclarke@chrisdev.com">cclarke at chrisdev.com</a>⇥  </li>
                 </ul>                                                                            
             </div>
-            <div class="large-6 medium-6 columns">
+            <div class="large-6 medium-6 hide-for-small columns">
                 <h6><strong>Need a Website?</strong></h6> 
                 <p> If you need a website or a looking for a web based project fill out our
                     <a href="http://www.chrisdev.com/contact_us/client-project-form/">client project form</a>.

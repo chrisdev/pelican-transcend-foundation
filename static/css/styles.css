@@ -1,5 +1,7 @@
 body {background: #f2f2f2;}
 
+.row {max-width: 58em;}
+
 h1 {font-size: 1.7rem;}
 
 h1, h2, h3, h4, h5, h6 {color: #222222;}
@@ -27,7 +29,8 @@ div.panel {background: #fff; border: 1px solid #DDD;}'
 #footer {background: #505050;padding-top: 15px; margin-top: 15px;}
 footer.row ul {margin-left: 0;}
 footer.row h6 {color: #fff;}
-footer.row a {color: #fff;}
+footer.row a {color: #CCC;}
+footer.row a:hover {color: #1ABC9C;}
 footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
 
 
@@ -39,9 +42,15 @@ footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
 .top-bar-section ul li a {color: #1ABC9C; font-size: 0.9rem;}
 .top-bar-section li:not(.has-form) a:not(.button):hover {color: #1ABC9C;}
 .top-bar .name h1 a {color: #1ABC9C;}
-.top-bar.expanded .title-area {background: #1ABC9C; border-bottom: 2px solid #1ABC9C;}
+
 .top-bar .toggle-topbar.menu-icon a {color:#1abc9C;}
 .top-bar .toggle-topbar.menu-icon a span:after {box-shadow: 0 0 0 1px #1abc9C, 0 7px 0 1px #1abc9C, 0 14px 0 1px #1abc9C;}
+
+.top-bar.expanded .title-area {background: #1ABC9C; border-bottom: 2px solid #1ABC9C;}
+.top-bar.expanded h1 a {color: #fff;}
+.top-bar.expanded .toggle-topbar.menu-icon a {color:#fff;}
+.top-bar.expanded .toggle-topbar.menu-icon a span:after {box-shadow: 0 0 0 1px #fff, 0 7px 0 1px #fff, 0 14px 0 1px #fff;}
+
 
 
 @media only screen and (max-width:40em) { 
