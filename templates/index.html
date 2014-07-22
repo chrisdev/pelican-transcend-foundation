@@ -40,18 +40,18 @@
         {% else %}
 
             <article>
-                <h4 class="article-title"><a href="{{ SITEURL }}{{ article.url }}">{{ article.title }}</a></h4>
+                <h4 class="article-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h4>
                 <div class="info hide-for-small">
                     <ul class="small-block-grid-3">
                         <li><i class="fi-clock"></i>&nbsp;{{ article.locale_date }}</li>
-                        <li><i class="fi-torso"></i>&nbsp;By&nbsp;<a href="{{ SITEURL }}{{ article.author.url }}"><strong>{{ article.author }}</strong></a></li>
-                        <li><i class="fi-marker"></i>&nbsp;Category&nbsp;<a href="{{ SITEURL }}{{ article.category.url }}"><strong>{{ article.category }}</strong></a></li>
+                        <li><i class="fi-torso"></i>&nbsp;By&nbsp;<a href="{{ SITEURL }}/{{ article.author.url }}"><strong>{{ article.author }}</strong></a></li>
+                        <li><i class="fi-marker"></i>&nbsp;Category&nbsp;<a href="{{ SITEURL }}/{{ article.category.url }}"><strong>{{ article.category }}</strong></a></li>
                     </ul>
                     <ul class="small-block-grid-1 tags">
                         {% if article.tags %}
                             <li><i class="fi-marker"></i>&nbsp;Tags&nbsp;
                                 {% for tag in article.tags %} 
-                                    <span class="label secondary round"><a href="{{ SITEURL }}{{ tag.url }}">{{ tag }}</a></span>
+                                    <span class="label secondary round"><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></span>
                                  {% endfor %}
                             </li>
                         {% endif %}
@@ -59,7 +59,7 @@
                 </div>
                 {{ article.summary }}
                 {% include 'comments.html' %}
-                <a class="button radius tiny success right" href="{{ SITEURL }}{{ article.url }}">Read More</a>
+                <a class="button radius tiny success right" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
             </article>
             
            <hr />
