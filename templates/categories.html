@@ -1,10 +1,11 @@
 {% extends "base.html" %}
+{% block welcome %}{% endblock %}
 
 {% block content %}
-<ul class="inline-list">
-{% for category, articles in categories %}
-    <li><a href="{{ category.url }}">{{ category }}</a></li>
-{% endfor %}
-
-</ul>
+    <div id="category" class="large-10 medium-10 medium-centered large-centered columns">
+        <h3>Categories</h3>
+        {% for category, articles in categories %}
+            <h6 class="subheader"><a href="{{ category.url }}">{{ category }}</a></h6>
+        {% endfor %}
+    </div>
 {% endblock %}

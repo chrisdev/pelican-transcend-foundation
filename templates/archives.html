@@ -4,17 +4,18 @@
 
 {% block content %}
 
-<h3>Archives</h3>
-
-<table class="table-archive">
-    <tbody>
-    {% for article in dates %}
-        <tr>
-        <td>{{ article.locale_date }}</td>
-        <td><a href='{{ article.url }}'>{{ article.title }}</a></td>
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
+<div id="archives" class="large-10 medium-10 medium-centered large-centered columns">
+    <h3>Archives</h3>
+    <table class="table-archive">
+        <tbody>
+        {% for article in dates %}
+            <tr>
+            <td>{{ article.locale_date }}</td>
+            <td><a href='{{ article.url }}'>{{ article.title }}</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 {% endblock %}

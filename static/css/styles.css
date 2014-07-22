@@ -2,6 +2,10 @@ body {background: #f2f2f2;}
 
 .row {max-width: 58em;}
 
+#main {min-height: 400px;}
+#main hr{border-style: dashed;}
+#main hr:last-of-type {border: 0;}
+
 h1 {font-size: 1.7rem;}
 
 h1, h2, h3, h4, h5, h6 {color: #222222;}
@@ -18,8 +22,7 @@ article img {border-radius: 8px; margin-bottom: 10px;}
 article table {margin-top: 10px;}
 article table tr th, article table tr td {padding: 9px 12px;}
 article table tr th {background: rgba(25, 188, 156, 0.8); text-align: center; color: #fff;}
-#main hr{border-style: dashed;}
-#main hr:last-of-type {border: 0;}
+
 
 
 div.panel {background: #fff; border: 1px solid #DDD;}'
@@ -85,3 +88,6 @@ footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
 
 ul.circle li {font-size: 18px; font-weight: 500; font-variant: small-caps;}
 ul.square li {font-size: 13px; font-variant: normal;}
+
+#label .label{font-size: 1rem; padding: 8px 12px;margin: 5px; font-variant: small-caps;
+}
