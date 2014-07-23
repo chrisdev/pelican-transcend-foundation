@@ -44,27 +44,27 @@
         <div class="large-12 columns">
             <nav class="top-bar" data-topbar>
               <ul class="title-area">
-                <li class="name hide-for-small">
-                    <h1><a href="/"><!--<white>{</white>&nbsp;<red>*</red>&nbsp;<white>}</white>&nbsp;-->{{ SITENAME }}</a></h1>
+                <li class="name">
+                    <h1><a href="/">{{ SITENAME }}</a></h1>
                 </li>
                 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
               </ul>
             
               <section class="top-bar-section">
-                <ul class="right">
-                {% for title, link in MENUITEMS %}
-                    <li><a href="{{ link }}">{{ title }}</a></li>
-                {% endfor %}
-                {% if DISPLAY_PAGES_ON_MENU -%}
-                  {% for pg in PAGES %}
-                     <li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
-                  {% endfor %}
-                {% endif %}
-                {% if DISPLAY_CATEGORIES_ON_MENU -%}
-                  {% for cat, null in categories %}
-                     <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-                   {% endfor %}
-                {% endif %}
+                <ul class="right">                  
+                    {% for title, link in MENUITEMS %}
+                        <li><a href="{{ link }}">{{ title }}</a></li>
+                    {% endfor %}
+                    {% if DISPLAY_PAGES_ON_MENU -%}
+                      {% for pg in PAGES %}
+                         <li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
+                      {% endfor %}
+                    {% endif %}
+                    {% if DISPLAY_CATEGORIES_ON_MENU -%}
+                      {% for cat, null in categories %}
+                         <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                       {% endfor %}
+                    {% endif %}
                 </ul>
               </section>
             </nav>
@@ -81,9 +81,9 @@
             {% block welcome %}
                 <div id="welcome" class="large-10 medium-10 medium-centered large-centered columns">
                     <div class="panel">
-                        <img src="http://www.gravatar.com/avatar/52fe395ad2f2001344f40e6ab2b4a9b8.png" alt="" />
-                        <h3 style="vertical-align: middle;">Welcome to ChrisDev Blog</h3>
-                        <p>I've started experimenting with a static blog in the hope that this will encourage me to post on a more frequent basis. I've decided to go with pelican as it's written in Python, is relatively easy to set up and has good documentation.</p>
+                        <img src="{{ SITEGRAVATAR }}" alt="" />
+                        <h3 style="vertical-align: middle;">Welcome to {{ SITENAME }}</h3>
+                        <p>{{ SITEDESCRIPTION }}</p>
                     </div>
                 </div>
             {% endblock %}
@@ -139,15 +139,14 @@
             <div class="large-6 medium-6 columns">
                 <h6><strong>Contact Us</strong></h6>                                             
                 <ul>                                                                             
-                    <li>Phone (Cell):&nbsp;+(868)-773-4644</li>                              
-                    <li>Phone (Office):&nbsp;+(868)-221-6277</li>                            
-                    <li>Email:&nbsp;<a href="mailto:cclarke@chrisdev.com">cclarke at chrisdev.com</a>⇥  </li>
+                    <li>Phone (Office):&nbsp;{{ SITEPHONE }}</li>                            
+                    <li>Email:&nbsp;<a href="mailto:{{ SITEEMAIL }}">{{ SITEEMAIL }}</a></li>
                 </ul>                                                                            
             </div>
             <div class="large-6 medium-6 hide-for-small columns">
                 <h6><strong>Need a Website?</strong></h6> 
                 <p> If you need a website or a looking for a web based project fill out our
-                    <a href="http://www.chrisdev.com/contact_us/client-project-form/">client project form</a>.
+                    <a href="{{ SITEWEBSITE }}" target="_blank">client project form</a>.
                 Remember you can always email  us or call us if you have questions or need more information,
                 </p>
             </div>
