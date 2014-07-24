@@ -1,0 +1,18 @@
+<li class="adr">
+   <ul>
+    {% if VCARD.street_address %}<li class="street-address">{{ VCARD.street_address}}</li>{% endif %}
+    {% if VCARD.extended_address %}<li class="extended-address">{{ VCARD.extended_address}}</li>{% endif %}
+    {% if VCARD.locality %}<li class="locality">{{ VCARD.locality }}</li>{% endif %}
+    {% if VCARD.region %}<li class="region">{{ VCARD.region }}</li>{% endif %}
+    {% if VCARD.postal_code %}<li class="postal-code">{{ VCARD.postal_code}}</li>&nbsp;{% endif %}
+    {% if VCARD.country_name %}
+        <li class="country-name">
+        {% if VCARD.get_country_name_display %}
+            {{ VCARD.get_country_name_display }}
+        {% else %}
+            {{ VCARD.country_name }}
+        {% endif %}
+        </li>
+     {% endif %}
+ </ul>
+</li>

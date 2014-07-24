@@ -138,9 +138,12 @@
             <hr>
             <div class="large-6 medium-6 columns">
                 <h6><strong>Contact Us</strong></h6>                                             
-                <ul>                                                                             
-                    <li>Phone (Office):&nbsp;{{ SITEPHONE }}</li>                            
-                    <li>Email:&nbsp;<a href="mailto:{{ SITEEMAIL }}">{{ SITEEMAIL }}</a></li>
+                    {% if VCARD %}
+                        {% include 'hcard.html' %}
+                    {% else %}
+                        <li>Christopher Clarke</li>                            
+                        <li>Email:&nbsp;<a href="mailto:cclarke@chrisdev.com">cclarke@chrisdev.com</a></li>
+                    {% endif %}
                 </ul>                                                                            
             </div>
             <div class="large-6 medium-6 hide-for-small columns">

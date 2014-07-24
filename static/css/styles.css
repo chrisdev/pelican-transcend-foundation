@@ -95,3 +95,6 @@ ul.square li {font-size: 13px; font-variant: normal;}
 
 #label .label{font-size: 1rem; padding: 8px 12px;margin: 5px; font-variant: small-caps;
 }
+.vcard  span{
+    padding-left: 15px;
+}
