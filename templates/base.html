@@ -81,7 +81,7 @@
             {% block welcome %}
                 <div id="welcome" class="large-10 medium-10 medium-centered large-centered columns">
                     <div class="panel">
-                        <img src="{{ SITEGRAVATAR }}" alt="" />
+                        {% if SITEGRAVATAR %}<img src="{{ SITEGRAVATAR }}" alt="{{ SITENAME }}" />{% endif %}
                         <h3 style="vertical-align: middle;">Welcome to {{ SITENAME }}</h3>
                         <p>{{ SITEDESCRIPTION }}</p>
                     </div>
@@ -138,6 +138,7 @@
             <hr>
             <div class="large-6 medium-6 columns">
                 <h6><strong>Contact Us</strong></h6>                                             
+
                     {% if VCARD %}
                         {% include 'hcard.html' %}
                     {% else %}
