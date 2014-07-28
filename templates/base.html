@@ -30,7 +30,7 @@
 
 <!-- Nav Bar -->
 
-<div id="header" data-magellan-expedition="fixed">
+<div id="header">
     <div class="row hide-for-small">
         {% if SOCIAL %}
         <div class="social large-12 columns">
@@ -43,7 +43,7 @@
         {% endif %}
     </div>
     <div class="row">
-        <div class="large-12 columns">
+        <div class="large-12 columns" data-magellan-expedition="fixed">
             <nav class="top-bar" data-topbar>
               <ul class="title-area">
                 <li class="name">
@@ -144,7 +144,6 @@
             </div>
             <hr>
             <div class="large-6 medium-6 columns">
-                <h6><strong>Contact Us</strong></h6>                                             
                     {% if VCARD %}
                         {% include 'hcard.html' %}
                     {% else %}
@@ -155,11 +154,11 @@
             </div>
             <div id ="colophon" class="large-6 medium-6 hide-for-small columns">
                 {% if COLOPHON %}
-                    <h2>{{ COLOPHON_TITLE }}</h2>
+                    <h6>{{ COLOPHON_TITLE }}</h6>
                     <p> {{ COLOPHON_CONTENT }}</p>
                    </div>
                 {% else %}
-                    <h2><strong>Colophon</strong></h2> 
+                    <h6><strong>Colophon</strong></h6> 
                     <p> This site is made with <a href="http://python.org">Python</a> using the 
                     <a href="http://pypi.python.org/pypi/pelican/">Pelican static site generator</a>.
                     This theme is <a href="http://github.com/chrisdev/pelican-transcend-foundation">Transcend Foundation</a>
