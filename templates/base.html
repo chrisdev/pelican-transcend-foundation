@@ -12,7 +12,6 @@
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/styles.css">
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygment.css">
     {% endif %}
-    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
     {% if FEED_ALL_ATOM %}
      <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
@@ -100,7 +99,7 @@
 <div id="footer">
     <footer class="row">
             <div class="large-3 medium-3 small-6 columns">
-                <h6>Site</h6>
+                <h6>Site Map</h6>
                 <ul>
                 <li><a href="{{ SITEURL }}/archives.html">Archives</a></li>
                 <li><a href="{{ SITEURL }}/tags.html">Tags</a></li>
@@ -134,14 +133,18 @@
                         {% for name, link in SOCIAL %}
                             <li><a href="{{ link }}"><i class="fi-social-{{ name }}"></i>&nbsp;{{ name }}</a></li>
                         {% endfor %}
-                            <li><a href="/feed/all.atom.xml"><i class="fi-rss"></i>&nbsp; Subcribe to my feed</a></li>
+                        {% if FEED_ALL_ATOM %}
+                            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}"><i class="fi-atom"></a></li>
+                        {% endif %}
+                        {% if FEED_ALL_RSS %}
+                            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_rss }}"><i class="fi-rss"></a></li>
+                        {% endif %} 
                     </ul>
                 {% endif %}
             </div>
             <hr>
             <div class="large-6 medium-6 columns">
                 <h6><strong>Contact Us</strong></h6>                                             
-
                     {% if VCARD %}
                         {% include 'hcard.html' %}
                     {% else %}
@@ -150,12 +153,20 @@
                     {% endif %}
                 </ul>                                                                            
             </div>
-            <div class="large-6 medium-6 hide-for-small columns">
-                <h6><strong>Need a Website?</strong></h6> 
-                <p> If you need a website or a looking for a web based project fill out our
-                    <a href="{{ SITEWEBSITE }}" target="_blank">client project form</a>.
-                Remember you can always email  us or call us if you have questions or need more information,
-                </p>
+            <div id ="colophon" class="large-6 medium-6 hide-for-small columns">
+                {% if COLOPHON %}
+                    <h2>{{ COLOPHON_TITLE }}</h2>
+                    <p> {{ COLOPHON_CONTENT }}</p>
+                   </div>
+                {% else %}
+                    <h2><strong>Colophon</strong></h2> 
+                    <p> This site is made with <a href="http://python.org">Python</a> using the 
+                    <a href="http://pypi.python.org/pypi/pelican/">Pelican static site generator</a>.
+                    This theme is <a href="http://github.com/chrisdev/pelican-transcend-foundation">Transcend Foundation</a>
+                    by <a href="http://github.com/chrisdev">Christopher Clarke</a> 
+                    and <a href="http://github.com/ilendl2">Lendl Smith</a> for Chrisdev
+                    </p>
+                {% endif %}
             </div>
     </footer>
 </div>
