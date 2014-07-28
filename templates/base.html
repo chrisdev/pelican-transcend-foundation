@@ -43,17 +43,20 @@
         {% endif %}
     </div>
     <div class="row">
+        <div class="large-12 columns hide-for-small">
+            <h1><a href="/">{{ SITENAME }}</a></h1>
+        </div>
         <div class="large-12 columns" data-magellan-expedition="fixed">
             <nav class="top-bar" data-topbar>
               <ul class="title-area">
-                <li class="name">
+                <li class="name show-for-small">
                     <h1><a href="/">{{ SITENAME }}</a></h1>
                 </li>
                 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
               </ul>
             
               <section class="top-bar-section">
-                <ul class="right">                  
+                <ul>                  
                     {% for title, link in MENUITEMS %}
                         <li><a href="{{ link }}">{{ title }}</a></li>
                     {% endfor %}
@@ -91,6 +94,7 @@
             {% endblock %}
             {% block content %}{% endblock %}
         </div>
+        <a href="#" class="scrollup">Scroll</a>
 </div> 
  <!-- End Main Content -->
 
@@ -173,6 +177,11 @@
 <script src="{{ SITEURL }}/{{THEME_STATIC_DIR}}/js/foundation.min.js"></script>
 <script>
  $(document).foundation();
+</script>
+<script>
+$(document).ready(function () {
+    $(window).scroll(function () {if ($(this).scrollTop() > 100) { $('.scrollup').fadeIn();} else {$('.scrollup').fadeOut();}});
+    $('.scrollup').click(function () {$("html, body").animate({scrollTop: 0}, 600);return false;});});
 </script>
 {% include 'analytics.html' %}
 {% include 'piwik.html' %}

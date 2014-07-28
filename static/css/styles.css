@@ -14,6 +14,9 @@ a {color: #1ABC9C;}
 a:hover {color: #16a085;}
 .subheader {color: #707070;}
 
+.scrollup {width: 30px;height: 30px;position: fixed;bottom: 15px;right: 15px;display: none;text-indent: -9999px;background: url('../images/scroll.png') center center no-repeat rgba(25, 188, 156, 0.8);border-radius: 50%;}
+
+
 
 article h1 {color: #505050;}
 article h2 {font-size: 1.4rem; color: #1ABC9C;}
@@ -38,7 +41,9 @@ ul.info li.name {font-size: 16px;}
 
 
 
-#footer {background: #505050;padding-top: 15px; margin-top: 15px;}
+#footer {background: #505050;padding-top: 15px; margin-top: 15px;
+    padding-bottom: 10px;
+}
 footer.row ul {margin-left: 0;}
 footer.row h6 {color: #fff;}
 footer.row a {color: #CCC;}
@@ -48,11 +53,14 @@ footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
 
 
 #header {background: #1ABC9C;
-    padding: 10px 0 30px;
+    padding: 10px 0;
     border-bottom: 3px solid #DDD;}
+#header h1 {font-size: 1.8rem;font-family: 'Lobster', cursive; text-align: center;}
+#header h1 a {color: #fff;}
 .top-bar {background: #1ABC9C;}
-.top-bar-section ul {margin-top: 4px;}
-.top-bar-section ul li {background: transparent; font-variant: small-caps; margin-left: 8px;}
+.top-bar-section ul {display: table; margin: 0 auto;}
+.top-bar-section ul li {background: transparent; font-variant: small-caps;display: table-cell;}
+
 .top-bar-section li:not(.has-form) a:not(.button) {background: transparent; border-radius: 8px;}
 
 .top-bar-section ul li a {color: #fff; font-size: 1rem;}
@@ -75,6 +83,7 @@ footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
     #header .columns {padding: 0;}
     .top-bar-section li:not(.has-form) a:not(.button){border-radius: 0;}
     .top-bar-section ul li {margin-left: 0px;}
+    .top-bar-section ul, .top-bar-section ul li  {display: block;}  
 }
 
 
