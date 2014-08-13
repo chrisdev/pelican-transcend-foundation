@@ -1,6 +1,6 @@
 {% if VCARD %}
-<ul id="hcard-{{ VCARD.email }}" class="vcard">
-    <li class="fn n">
+<ul id="hcard-{{ VCARD.email }}" class="info">
+    <li class="name">
         {% if VCARD.url %}<a href="{{VCARD.url}}" class="url">{% endif %}
         {% if VCARD.given_name or VCARD.family_name or VCARD.additional_name %}
             {% if VCARD.honorific_prefix %}<span class="honorific-prefix">{{ VCARD.honorific_prefix }}</span>&nbsp;{% endif %}
@@ -13,34 +13,24 @@
         {% endif %}
         {% if VCARD.url %}</a>{% endif %}
     </li>
+    
     {% if VCARD.given_name or VCARD.family_name or VCARD.additional_name %}
         {% if VCARD.title %}<li class="title">{{ VCARD.title }}</li>{% endif %}
         {% if VCARD.org %} <li class="org">{{ VCARD.org }}</li> {% endif %}
     {% endif %}
-    {% if VCARD.email_work %}
-        <li class="email">
-        <a class="email" href="mailto:{{ VCARD.email }}">
-            <abbr class="type" title="pref">preferred</abbr>{{ VCARD.email_work }} </a>
-        <li/>
-    {% endif %} 
+    
     {% include 'address.html' %}
+    {% if VCARD.email %}
+        <li class="email"><i class="fi-mail"></i> Email : <a href="mailto:{{ VCARD.email }}">{{ VCARD.email }}</a><li/>
+    {% endif %}
     {% if VCARD.tel_home %}
-    <li class="tel">
-        <dt>Phone (<span class="type">home</span>)</dt>
-        <dd><span class="value">{{ VCARD.tel_home }}</span></dd>
-   </li> 
+        <li class="tel"><i class="fi-telephone"></i> Phone (home) : {{ VCARD.tel_home }}</li>
     {% endif %}
     {% if VCARD.tel_work %}
-    <li class="tel">
-        <span>Phone (<span class="type">work</span>)</span>
-        <span><span class="value">{{ VCARD.tel_work }}</span></span>
-   </li> 
+        <li class="tel"><i class="fi-telephone"></i> Phone (work) : {{ VCARD.tel_work }}</li> 
     {% endif %}
     {% if VCARD.tel_fax %}
-    <li class="tel">
-        <span>FAX (<span class="type">fax</span>)</span>
-        <dd><span class="value">{{ VCARD.tel_fax }}</span></dd>
-    </li> 
+        <li class="tel"><i class="fi-print"></i> Fax : {{ VCARD.tel_fax }}</li>
     {% endif %}
 </ul>
 {% endif %}

@@ -30,7 +30,7 @@
 
 <!-- Nav Bar -->
 
-<div id="header" data-magellan-expedition="fixed">
+<div id="header">
     <div class="row hide-for-small">
         {% if SOCIAL %}
         <div class="social large-12 columns">
@@ -43,17 +43,20 @@
         {% endif %}
     </div>
     <div class="row">
-        <div class="large-12 columns">
+        <div class="large-12 columns hide-for-small">
+            <h1><a href="/">{{ SITENAME }}</a></h1>
+        </div>
+        <div class="large-12 columns" data-magellan-expedition="fixed">
             <nav class="top-bar" data-topbar>
               <ul class="title-area">
-                <li class="name">
+                <li class="name show-for-small">
                     <h1><a href="/">{{ SITENAME }}</a></h1>
                 </li>
                 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
               </ul>
             
               <section class="top-bar-section">
-                <ul class="right">                  
+                <ul>                  
                     {% for title, link in MENUITEMS %}
                         <li><a href="{{ link }}">{{ title }}</a></li>
                     {% endfor %}
@@ -78,19 +81,23 @@
 
 
 <!-- Main Page Content -->
-<div class="row" style="margin-top: 15px;">
-        <div id="main" class="large-12 columns">
+        <div id="main">
             {% block welcome %}
-                <div id="welcome" class="large-10 medium-10 medium-centered large-centered columns">
-                    <div class="panel">
-                        {% if SITEGRAVATAR %}<img src="{{ SITEGRAVATAR }}" alt="{{ SITENAME }}" />{% endif %}
-                        <h3 style="vertical-align: middle;">Welcome to {{ SITENAME }}</h3>
-                        <p>{{ SITEDESCRIPTION }}</p>
+                <div id="welcome" class="parralax header">
+                    <div class="row">
+                        <div class="large-10 medium-10 medium-centered large-centered columns">
+                          <h1>Welcome to {{ SITENAME }}</h1>
+                          <p>{{ SITEDESCRIPTION }}</p>
+                        </div>
                     </div>
                 </div>
             {% endblock %}
-            {% block content %}{% endblock %}
+            
+            <div id="content" class="row">
+                {% block content %}{% endblock %}
+            </div>
         </div>
+        <a href="#" class="scrollup">Scroll</a>
 </div> 
  <!-- End Main Content -->
 
@@ -144,7 +151,6 @@
             </div>
             <hr>
             <div class="large-6 medium-6 columns">
-                <h6><strong>Contact Us</strong></h6>                                             
                     {% if VCARD %}
                         {% include 'hcard.html' %}
                     {% else %}
@@ -155,11 +161,11 @@
             </div>
             <div id ="colophon" class="large-6 medium-6 hide-for-small columns">
                 {% if COLOPHON %}
-                    <h2>{{ COLOPHON_TITLE }}</h2>
+                    <h6>{{ COLOPHON_TITLE }}</h6>
                     <p> {{ COLOPHON_CONTENT }}</p>
                    </div>
                 {% else %}
-                    <h2><strong>Colophon</strong></h2> 
+                    <h6><strong>Colophon</strong></h6> 
                     <p> This site is made with <a href="http://python.org">Python</a> using the 
                     <a href="http://pypi.python.org/pypi/pelican/">Pelican static site generator</a>.
                     This theme is <a href="http://github.com/chrisdev/pelican-transcend-foundation">Transcend Foundation</a>
@@ -174,6 +180,11 @@
 <script src="{{ SITEURL }}/{{THEME_STATIC_DIR}}/js/foundation.min.js"></script>
 <script>
  $(document).foundation();
+</script>
+<script>
+$(document).ready(function () {
+    $(window).scroll(function () {if ($(this).scrollTop() > 100) { $('.scrollup').fadeIn();} else {$('.scrollup').fadeOut();}});
+    $('.scrollup').click(function () {$("html, body").animate({scrollTop: 0}, 600);return false;});});
 </script>
 {% include 'analytics.html' %}
 {% include 'piwik.html' %}

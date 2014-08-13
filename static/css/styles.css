@@ -14,6 +14,9 @@ a {color: #1ABC9C;}
 a:hover {color: #16a085;}
 .subheader {color: #707070;}
 
+.scrollup {width: 30px;height: 30px;position: fixed;bottom: 15px;right: 15px;display: none;text-indent: -9999px;background: url('../images/scroll.png') center center no-repeat rgba(25, 188, 156, 0.8);border-radius: 50%;}
+
+
 
 article h1 {color: #505050;}
 article h2 {font-size: 1.4rem; color: #1ABC9C;}
@@ -28,8 +31,19 @@ article table tr th {background: rgba(25, 188, 156, 0.8); text-align: center; co
 div.panel {background: #fff; border: 1px solid #DDD;}'
 #content {min-height: 500px;}
 
+ul.info {margin-left: 0; border: 0;padding: 0;margin-bottom: 0px;}
+ul.info li {list-style: none; font-size: 13px; color: #8d9095;}
+ul.info li a {color: #1abc9C;}
+ul.info li a i {color: #1abc9C; margin-right: 3px;}
 
-#footer {background: #505050;padding-top: 15px; margin-top: 15px;}
+
+ul.info li.name {font-size: 16px;}
+
+
+
+#footer {background: #505050;padding-top: 15px; margin-top: 15px;
+    padding-bottom: 10px;
+}
 footer.row ul {margin-left: 0;}
 footer.row h6 {color: #fff;}
 footer.row a {color: #CCC;}
@@ -37,10 +51,17 @@ footer.row a:hover {color: #1ABC9C;}
 footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
 
 
-#header {background: #f5f5f5 url('../images/wire.jpg')right center no-repeat; padding: 10px 0 35px; border-bottom: 3px solid #1ABC9C;}
-.top-bar {background: transparent;}
-.top-bar-section ul {margin-top: 4px;}
-.top-bar-section ul li {background: transparent; font-variant: small-caps; margin-left: 8px;}
+
+#header {background: #1ABC9C;
+    padding: 10px 0;
+    border-bottom: 3px solid #DDD;}
+#header h1 {font-size: 1.8rem;font-family: 'Lobster', cursive; text-align: center;}
+#header h1 a {color: #fff;}
+#header img {min-width: 240px;}
+.top-bar {background: #1ABC9C;}
+.top-bar-section ul {display: table; margin: 0 auto;}
+.top-bar-section ul li {background: transparent; font-variant: small-caps;display: table-cell;}
+
 .top-bar-section li:not(.has-form) a:not(.button) {background: transparent; border-radius: 8px;}
 
 .top-bar-section ul li a {color: #fff; font-size: 1rem;}
@@ -56,23 +77,19 @@ footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
 .top-bar.expanded .title-area {background: #1ABC9C; border-bottom: 2px solid #1ABC9C;}
 .top-bar.expanded h1 a {color: #fff;}
 
+[data-magellan-expedition], [data-magellan-expedition-clone] {left: 0;padding: 0; background: transparent;}
 
 @media only screen and (max-width:40em) { 
     #header {padding: 0;}
     #header .columns {padding: 0;}
     .top-bar-section li:not(.has-form) a:not(.button){border-radius: 0;}
     .top-bar-section ul li {margin-left: 0px;}
+    .top-bar-section ul, .top-bar-section ul li  {display: block;}  
 }
 
 
 .social {padding-bottom: 15px;}
 .social a {color: #fff;}
-
-
-#welcome img {border-radius: 50%;float: left; margin-right: 10px;}
-#welcome h3 {color: #1ABC9C;}
-#welcome p { font-size: 12px;}
-#welcome .panel {padding: 10px; border-radius: 12px; margin-top: 10px;}
 
 
 #sidebar .panel {padding: 12px;}
@@ -93,8 +110,15 @@ footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
 ul.circle li {font-size: 18px; font-weight: 500; font-variant: small-caps;}
 ul.square li {font-size: 13px; font-variant: normal;}
 
-#label .label{font-size: 1rem; padding: 8px 12px;margin: 5px; font-variant: small-caps;
-}
-.vcard  span{
-    padding-left: 15px;
-}
+#label .label{font-size: 1rem; padding: 8px 12px;margin: 5px; font-variant: small-caps;}
+.vcard  span{padding-left: 15px;}
+
+
+.parralax {position: relative;width: 100%;box-sizing: border-box;box-shadow: 0 -1px 10px rgba(0, 0, 0, .5);transform-style: inherit; margin-bottom: 20px;}
+.parralax:before {content: "";position: absolute;top: 0;bottom: 0;left:0;right:0;}
+.parralax h1, .parralax p {text-align: center; color: #1ABC9C;}
+.parralax h1 {color: #fff;font-size: 1.8rem;font-family: 'Lobster', cursive;}
+
+#welcome img {border-radius: 50%;float: left; margin-right: 20px; min-width: 100px;}
+#welcome p { font-size: 16px;}
+#welcome {background-image: url("../images/cubes.jpg");background-attachment: fixed; height: 240px; padding-top: 50px;}
