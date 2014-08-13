@@ -57,6 +57,7 @@ footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
     border-bottom: 3px solid #DDD;}
 #header h1 {font-size: 1.8rem;font-family: 'Lobster', cursive; text-align: center;}
 #header h1 a {color: #fff;}
+#header img {min-width: 240px;}
 .top-bar {background: #1ABC9C;}
 .top-bar-section ul {display: table; margin: 0 auto;}
 .top-bar-section ul li {background: transparent; font-variant: small-caps;display: table-cell;}
@@ -91,12 +92,6 @@ footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
 .social a {color: #fff;}
 
 
-#welcome img {border-radius: 50%;float: left; margin-right: 10px;}
-#welcome h3 {color: #1ABC9C;}
-#welcome p { font-size: 12px;}
-#welcome .panel {padding: 10px; border-radius: 12px; margin-top: 10px;}
-
-
 #sidebar .panel {padding: 12px;}
 #sidebar ul {margin-left: 0;}
 #sidebar h6{font-variant: small-caps; font-size: 13px; font-weight: 600;color: #1ABC9C; margin-bottom: 5px; text-align: center;}
@@ -115,8 +110,15 @@ footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
 ul.circle li {font-size: 18px; font-weight: 500; font-variant: small-caps;}
 ul.square li {font-size: 13px; font-variant: normal;}
 
-#label .label{font-size: 1rem; padding: 8px 12px;margin: 5px; font-variant: small-caps;
-}
-.vcard  span{
-    padding-left: 15px;
-}
+#label .label{font-size: 1rem; padding: 8px 12px;margin: 5px; font-variant: small-caps;}
+.vcard  span{padding-left: 15px;}
+
+
+.parralax {position: relative;width: 100%;box-sizing: border-box;box-shadow: 0 -1px 10px rgba(0, 0, 0, .5);transform-style: inherit; margin-bottom: 20px;}
+.parralax:before {content: "";position: absolute;top: 0;bottom: 0;left:0;right:0;}
+.parralax h1, .parralax p {text-align: center; color: #1ABC9C;}
+.parralax h1 {color: #fff;font-size: 1.8rem;font-family: 'Lobster', cursive;}
+
+#welcome img {border-radius: 50%;float: left; margin-right: 20px; min-width: 100px;}
+#welcome p { font-size: 16px;}
+#welcome {background-image: url("../images/cubes.jpg");background-attachment: fixed; height: 240px; padding-top: 50px;}

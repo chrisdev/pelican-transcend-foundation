@@ -81,18 +81,21 @@
 
 
 <!-- Main Page Content -->
-<div class="row" style="margin-top: 15px;">
-        <div id="main" class="large-12 columns">
+        <div id="main">
             {% block welcome %}
-                <div id="welcome" class="large-10 medium-10 medium-centered large-centered columns">
-                    <div class="panel">
-                        {% if SITEGRAVATAR %}<img src="{{ SITEGRAVATAR }}" alt="{{ SITENAME }}" />{% endif %}
-                        <h3 style="vertical-align: middle;">Welcome to {{ SITENAME }}</h3>
-                        <p>{{ SITEDESCRIPTION }}</p>
+                <div id="welcome" class="parralax header">
+                    <div class="row">
+                        <div class="large-10 medium-10 medium-centered large-centered columns">
+                          <h1>Welcome to {{ SITENAME }}</h1>
+                          <p>{{ SITEDESCRIPTION }}</p>
+                        </div>
                     </div>
                 </div>
             {% endblock %}
-            {% block content %}{% endblock %}
+            
+            <div id="content" class="row">
+                {% block content %}{% endblock %}
+            </div>
         </div>
         <a href="#" class="scrollup">Scroll</a>
 </div> 
