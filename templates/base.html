@@ -85,9 +85,23 @@
             {% block welcome %}
                 <div id="welcome" class="parralax header">
                     <div class="row">
-                        <div class="large-10 medium-10 medium-centered large-centered columns">
+                        <div class="large-8 medium-8 medium-centered large-centered columns">
+                           <div class="large-2 medium-2 large-centered medium-centered columns" style="text-align: center;">
+                                {% if SITEGRAVATAR %}<img src="{{ SITEGRAVATAR }}" alt="{{ SITENAME }}" />{% endif %}
+                           </div>
                           <h1>Welcome to {{ SITENAME }}</h1>
                           <p>{{ SITEDESCRIPTION }}</p>
+                          
+                          <div class="large-8 large-centered columns" style="margin-top: 15px;">
+                               <div class="row collapse">
+                                 <div class="small-8 columns">
+                                   <input type="text" placeholder="">
+                                 </div>
+                                 <div class="small-4 columns">
+                                   <a href="#" class="button postfix">Search</a>
+                                 </div>
+                               </div>
+                          </div>
                         </div>
                     </div>
                 </div>

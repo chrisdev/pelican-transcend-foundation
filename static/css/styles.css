@@ -119,6 +119,9 @@ ul.square li {font-size: 13px; font-variant: normal;}
 .parralax h1, .parralax p {text-align: center; color: #1ABC9C;}
 .parralax h1 {color: #fff;font-size: 1.8rem;font-family: 'Lobster', cursive;}
 
-#welcome img {border-radius: 50%;float: left; margin-right: 20px; min-width: 100px;}
+#welcome img {min-width: 80px; border-radius: 50%; margin-bottom: 10px;}
 #welcome p { font-size: 16px;}
-#welcome {background-image: url("../images/cubes.jpg");background-attachment: fixed; height: 240px; padding-top: 50px;}
+#welcome {background-image: url("../images/cubes.jpg");background-attachment: fixed; height: 350px; padding-top: 40px;}
+
+#welcome input[type="text"], textarea {border-bottom-left-radius: 4px; border-top-left-radius: 4px;}
+#welcome .postfix.button {border-bottom-right-radius: 4px; border-top-right-radius: 4px; left: -2px;}
