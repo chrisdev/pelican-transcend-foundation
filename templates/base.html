@@ -46,10 +46,10 @@
         </div>
         {% endif %}
     </div>
-    <div class="row">
+    <div id="logo" class="row">
         <div class="large-12 columns hide-for-small">
             {% if USE_SITE_LOGO %}
-                <div class="large-8 medium-8 large-centered medium-centered columns text-center">
+                <div class="large-4 medium-4 large-centered medium-centered columns text-center">
                     <img src="{{ SITE_URL }}/{{ THEME_STATIC_DIR }}/images/site_logo.png" alt="{{ SITENAME }}" />
                 </div>
             {% else %}
@@ -57,7 +57,8 @@
 
             {% endif %}
         </div>
-        <div class="large-12 columns" data-magellan-expedition="fixed">
+    </div>
+        <div data-magellan-expedition="fixed">
             <nav class="top-bar" data-topbar>
               <ul class="title-area">
                 <li class="name show-for-small">
@@ -85,7 +86,6 @@
               </section>
             </nav>
         </div>
-    </div>
 </div>      
 
 <!-- End Nav -->
@@ -94,7 +94,7 @@
 <!-- Main Page Content -->
         <div id="main">
             {% block welcome %}
-                <div id="welcome" class="parralax header">
+                <div id="welcome" class="parrallax header">
                     <div class="row">
                         <div class="large-8 medium-8 medium-centered large-centered columns">
                            <div class="large-2 medium-2 large-centered medium-centered columns" style="text-align: center;">
