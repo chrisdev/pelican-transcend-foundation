@@ -4,6 +4,9 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" >
     <meta name="description" content="{{ SITE_DESCRIPTION }}">
+    {% if USE_FAVICON_LINKS %}
+        {% include 'favicon_links.html' %}
+    {% endif %}
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:800|Anonymous+Pro:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
     {% if CSS_FIlE %}
@@ -45,7 +48,14 @@
     </div>
     <div class="row">
         <div class="large-12 columns hide-for-small">
-            <h1><a href="/">{{ SITENAME }}</a></h1>
+            {% if USE_SITE_LOGO %}
+                <div class="large-8 medium-8 large-centered medium-centered columns text-center">
+                    <img src="{{ SITE_URL }}/{{ THEME_STATIC_DIR }}/images/site_logo.png" alt="{{ SITENAME }}" />
+                </div>
+            {% else %}
+                 <h1><a href="/">{{ SITENAME }}</a></h1>
+
+            {% endif %}
         </div>
         <div class="large-12 columns" data-magellan-expedition="fixed">
             <nav class="top-bar" data-topbar>

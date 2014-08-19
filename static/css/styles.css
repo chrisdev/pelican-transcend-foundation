@@ -58,13 +58,13 @@ footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
 
 
 
-#header {background: #1ABC9C;
+#header {background: #2980b9;
     padding: 10px 0;
     border-bottom: 3px solid #DDD;}
 #header h1 {font-size: 1.8rem;font-family: 'Open Sans', cursive; text-align: center; font-weight: 800}
 #header h1 a {color: #fff;}
 #header img {min-width: 240px;}
-.top-bar {background: #1ABC9C;}
+.top-bar {background: #2980b9;}
 .top-bar-section ul {display: table; margin: 0 auto;}
 .top-bar-section ul li {background: transparent; font-variant: small-caps;display: table-cell;}
 
@@ -128,7 +128,7 @@ ul.square li {font-size: 13px; font-variant: normal;}
 
 #welcome img {min-width: 80px; border-radius: 50%; margin-bottom: 10px;}
 #welcome p { font-size: 16px;}
-#welcome {background-image: url("../images/birds-that-fly-high.jpg");background-attachment: fixed; height: 350px; padding-top: 40px; background-size:100%;}
+#welcome {background-image: url("../images/parallax.jpg");background-attachment: fixed; height: 350px; padding-top: 40px; background-size:100%;}
 
 #welcome input[type="text"], textarea {border-bottom-left-radius: 4px; border-top-left-radius: 4px;}
 #welcome .postfix.button {border-bottom-right-radius: 4px; border-top-right-radius: 4px; left: -2px;}
