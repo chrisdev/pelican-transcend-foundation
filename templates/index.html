@@ -27,7 +27,7 @@
                 <img src="{{ article.thumbnail }}" atl="{{ article.title|striptags }}">
                 {{ article.summary }}
                 {% include 'comments.html' %}
-                <a class="button radius tiny success right" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
+                <a class="button radius tiny right" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
             </article>
 
             {% if loop.length == 1 %}
@@ -59,7 +59,7 @@
                 </div>
                 {{ article.summary }}
                 {% include 'comments.html' %}
-                <a class="button radius tiny success right" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
+                <a class="button radius tiny right" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
             </article>
             
            <hr />
