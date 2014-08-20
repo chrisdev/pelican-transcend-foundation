@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}">
     {% else %} <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/foundation.css">
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/foundation-icons.css">
+        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch.css">
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/styles.css">
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygment.css">
     {% endif %}
@@ -104,14 +105,13 @@
                           <p>{{ SITEDESCRIPTION }}</p>
                           
                           <div class="large-8 large-centered columns" style="margin-top: 15px;">
-                               <div class="row collapse">
-                                 <div class="small-8 columns">
-                                   <input type="text" placeholder="">
-                                 </div>
-                                 <div class="small-4 columns">
-                                   <a href="#" class="button postfix">Search</a>
-                                 </div>
-                               </div>
+                        <div class="row collapse">
+                         <form action="{{ SITEURL }}/search.html" onsubmit="return validateForm(this.elements['q'].value);"> 
+                            <div class="small-8 columns">
+                                <input type="text" placeholder="" class="search-query" name="q" id="tipue_search_input"/>
+                            </div>
+                         </form> 
+                        </div>
                           </div>
                         </div>
                     </div>
@@ -201,18 +201,23 @@
             </div>
     </footer>
 </div>
+{% block js_script %}
 <script src="{{ SITEURL }}/{{THEME_STATIC_DIR}}/js/vendor/jquery.js"></script>
 <script src="{{ SITEURL }}/{{THEME_STATIC_DIR}}/js/foundation.min.js"></script>
 <script>
  $(document).foundation();
+
+  function validateForm(query){
+                return (query.length > 0);
+            }
 </script>
 <script>
 $(document).ready(function () {
     $(window).scroll(function () {if ($(this).scrollTop() > 100) { $('.scrollup').fadeIn();} else {$('.scrollup').fadeOut();}});
     $('.scrollup').click(function () {$("html, body").animate({scrollTop: 0}, 600);return false;});});
 </script>
+{% endblock %}
 {% include 'analytics.html' %}
 {% include 'piwik.html' %}
 {% include 'disqus_script.html' %}
-
 </body>
