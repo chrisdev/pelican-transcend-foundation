@@ -102,7 +102,7 @@
                                 {% if SITEGRAVATAR %}<img src="{{ SITEGRAVATAR }}" alt="{{ SITENAME }}" />{% endif %}
                            </div>
                           <h1>Welcome to {{ SITENAME }}</h1>
-                          <p>{{ SITEDESCRIPTION }}</p>
+                          <p>{{ SITE_DESCRIPTION }}</p>
                           
                           <div class="large-8 large-centered columns" style="margin-top: 15px;">
                         <div class="row collapse">
@@ -185,10 +185,8 @@
                 </ul>                                                                            
             </div>
             <div id ="colophon" class="large-6 medium-6 hide-for-small columns">
-                {% if COLOPHON %}
-                    <h6>{{ COLOPHON_TITLE }}</h6>
-                    <p> {{ COLOPHON_CONTENT }}</p>
-                   </div>
+                {% if USE_COLOPHON %}
+                  {% include 'colophon.html' %}
                 {% else %}
                     <h6><strong>Colophon</strong></h6> 
                     <p> This site is made with <a href="http://python.org">Python</a> using the 
