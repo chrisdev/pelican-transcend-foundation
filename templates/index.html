@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content_title %}{% endblock %}
-{% block content %}        
+{% block content %}
+
+<div class="large-10 large-centered columns">        
 {% if articles %}
     {% for article in articles_page.object_list %}        
 
@@ -24,7 +26,9 @@
                         {% endif %}
                     </ul>
                 </div>
-                <img src="{{ article.thumbnail }}" atl="{{ article.title|striptags }}">
+                <div class="feed_image">
+                    <img src="{{ article.thumbnail }}" atl="{{ article.title|striptags }}">
+                </div>
                 {{ article.summary }}
                 {% include 'comments.html' %}
                 <a class="button radius tiny right" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
@@ -39,7 +43,7 @@
         {# other items #}
         {% else %}
 
-            <article>
+            <article id="feed">
                 <h4 class="article-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h4>
                 <div class="info hide-for-small">
                     <ul class="small-block-grid-3">
@@ -83,4 +87,6 @@
     {% endfor %}
 
 {% endif %}
+
+</div>
 {% endblock content %}

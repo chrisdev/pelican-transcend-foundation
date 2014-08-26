@@ -12,7 +12,7 @@
     {% if CSS_FIlE %}
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}">
     {% else %} <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/foundation.css">
-        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/foundation-icons.css">
+        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/font-awesome.css">
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch.css">
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/styles.css">
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygment.css">
@@ -41,7 +41,7 @@
         <div class="social large-12 columns">
             <li style="float: right; text-align: right; font-size: 22px; list-style: none;">
              {% for name, link in SOCIAL %}
-                <a href="{{ link }}"><i class="fi-social-{{ name }}"></i></a>
+                <a href="{{ link }}"><i class="fa fa-{{ name }}-square"></i></a>
              {% endfor %}
             </li>
         </div>
@@ -119,7 +119,7 @@
             {% endblock %}
             
             <div id="content" class="row">
-                {% block content %}{% endblock %}
+                    {% block content %}{% endblock %}
             </div>
         </div>
         <a href="#" class="scrollup">Scroll</a>
@@ -163,13 +163,13 @@
                     <h6>Social</h6>
                     <ul>
                         {% for name, link in SOCIAL %}
-                            <li><a href="{{ link }}"><i class="fi-social-{{ name }}"></i>&nbsp;{{ name }}</a></li>
+                            <li><a href="{{ link }}"><i class="fa fa-{{ name }}"></i>&nbsp;{{ name }}</a></li>
                         {% endfor %}
                         {% if FEED_ALL_ATOM %}
-                            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}"><i class="fi-atom"></a></li>
+                            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}"><i class="fa fa-{{ name }}"></a></li>
                         {% endif %}
                         {% if FEED_ALL_RSS %}
-                            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_rss }}"><i class="fi-rss"></a></li>
+                            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_rss }}"><i class="fa fa-rss"></a></li>
                         {% endif %} 
                     </ul>
                 {% endif %}
