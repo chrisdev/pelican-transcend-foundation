@@ -133,6 +133,6 @@ ul.square li {font-size: 13px; font-variant: normal;}
 
 #welcome img {min-width: 80px; border-radius: 50%; margin-bottom: 10px;}
 #welcome p { font-size: 16px;}
-#welcome {background-image: url("../images/parallax.jpg");background-attachment: fixed; height: 300px; padding-top: 50px; background-size:100%;}
+#welcome {background-image: url("../images/parallax.jpg");background-attachment: fixed; height: 300px; padding-top: 50px;}
 
 #welcome input[type="text"], textarea {border-radius:4px;}
