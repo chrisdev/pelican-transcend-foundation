@@ -33,6 +33,9 @@ article table tr th, article table tr td {padding: 9px 12px;}
 article table tr th {background: rgba(25, 188, 156, 0.8); text-align: center; color: #fff;}
 
 
+article .feed_image {max-height:340px; width: 100%; overflow: hidden; border-radius: 8px; margin-bottom: 5px;}
+
+
 
 div.panel {background: #fff; border: 1px solid #DDD;}'
 #content {min-height: 500px;}
