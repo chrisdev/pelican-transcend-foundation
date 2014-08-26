@@ -21,16 +21,16 @@
     
     {% include 'address.html' %}
     {% if VCARD.email %}
-        <li class="email"><i class="fi-mail"></i> Email : <a href="mailto:{{ VCARD.email }}">{{ VCARD.email }}</a><li/>
+        <li class="email"><i class="fa fa-envelope"></i> Email : <a href="mailto:{{ VCARD.email }}">{{ VCARD.email }}</a><li/>
     {% endif %}
     {% if VCARD.tel_home %}
-        <li class="tel"><i class="fi-telephone"></i> Phone (home) : {{ VCARD.tel_home }}</li>
+        <li class="tel"><i class="fa fa-phone"></i> Phone (home) : {{ VCARD.tel_home }}</li>
     {% endif %}
     {% if VCARD.tel_work %}
-        <li class="tel"><i class="fi-telephone"></i> Phone (work) : {{ VCARD.tel_work }}</li> 
+        <li class="tel"><i class="fa fa-phone"></i> Phone (work) : {{ VCARD.tel_work }}</li> 
     {% endif %}
     {% if VCARD.tel_fax %}
-        <li class="tel"><i class="fi-print"></i> Fax : {{ VCARD.tel_fax }}</li>
+        <li class="tel"><i class="fa fa-print"></i> Fax : {{ VCARD.tel_fax }}</li>
     {% endif %}
 </ul>
 {% endif %}
