@@ -136,3 +136,7 @@ ul.square li {font-size: 13px; font-variant: normal;}
 #welcome {background-image: url("../images/parallax.jpg");background-attachment: fixed; height: 300px; padding-top: 50px;}
 
 #welcome input[type="text"], textarea {border-radius:4px;}
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+    #welcome {padding-top: 20px;}
+}
