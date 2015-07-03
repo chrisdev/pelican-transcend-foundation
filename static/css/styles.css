@@ -22,9 +22,11 @@ a:hover {color: #0072ab;}
 .scrollup {width: 30px;height: 30px;position: fixed;bottom: 15px;right: 15px;display: none;text-indent: -9999px;background: url('../images/scroll.png') center center no-repeat rgba(0, 135, 204, 0.8);border-radius: 50%;}
 
 article h1 {color: #505050;}
+
 article p, li {
-    font-family: 'Anonymous Pro', monospace, sans-serif;
+    font-family: Helvetica, sans-serif;
 }
+
 article h2 {font-size: 1.4rem; color: #08C;}
 article h4 {margin-bottom: 3px;}
 article img {border-radius: 8px; margin-bottom: 10px;}
