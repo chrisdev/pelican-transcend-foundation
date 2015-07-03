@@ -219,3 +219,4 @@
     color: #0000dd;
     font-weight: bold;
 }
+pre { white-space: pre; overflow: auto; }
