@@ -25,7 +25,6 @@
       <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
     {% endif %} 
     
-    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/vendor/modernizr.js"></script>
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -38,7 +37,7 @@
 <div id="header">
     <div class="row hide-for-small">
         {% if SOCIAL %}
-        <div class="social large-12 columns">
+        <div class="social medium-12 columns">
             <li style="float: right; text-align: right; font-size: 22px; list-style: none;">
              {% for name, link in SOCIAL %}
                 <a href="{{ link }}"><i class="fa fa-{{ name }}-square"></i></a>
@@ -48,9 +47,9 @@
         {% endif %}
     </div>
     <div id="logo" class="row">
-        <div class="large-12 columns hide-for-small">
+        <div class="medium-12 columns hide-for-small">
             {% if USE_SITE_LOGO %}
-                <div class="large-4 medium-4 large-centered medium-centered columns text-center">
+                <div class="medium-4 medium-centered columns text-center">
                     <img src="{{ SITE_URL }}/{{ THEME_STATIC_DIR }}/images/site_logo.png" alt="{{ SITENAME }}" />
                 </div>
             {% else %}
@@ -59,34 +58,33 @@
             {% endif %}
         </div>
     </div>
-        <div data-magellan-expedition="fixed">
-            <nav class="top-bar" data-topbar>
-              <ul class="title-area">
-                <li class="name show-for-small">
-                    <h1><a href="/">{{ SITENAME }}</a></h1>
-                </li>
-                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-              </ul>
-            
-              <section class="top-bar-section">
-                <ul>                  
-                    {% for title, link in MENUITEMS %}
-                        <li><a href="{{ link }}">{{ title }}</a></li>
-                    {% endfor %}
-                    {% if DISPLAY_PAGES_ON_MENU -%}
-                      {% for pg in PAGES %}
-                         <li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
-                      {% endfor %}
-                    {% endif %}
-                    {% if DISPLAY_CATEGORIES_ON_MENU -%}
-                      {% for cat, null in categories %}
-                         <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-                       {% endfor %}
-                    {% endif %}
-                </ul>
-              </section>
-            </nav>
+        <div class="title-bar" data-responsive-toggle="menu" data-hide-for="medium">
+          <button class="menu-icon" type="button" data-toggle></button>
+          <div class="title-bar-title">Menu</div>
         </div>
+        
+        <div class="top-bar" id="menu">
+            <div class="row">
+                <div class="medium-8 medium-centered columns">
+                  <ul class="menu expanded medium-horizontal text-center">
+                        {% for title, link in MENUITEMS %}
+                            <li><a href="{{ link }}">{{ title }}</a></li>
+                        {% endfor %}
+                        {% if DISPLAY_PAGES_ON_MENU -%}
+                          {% for pg in PAGES %}
+                             <li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
+                          {% endfor %}
+                        {% endif %}
+                        {% if DISPLAY_CATEGORIES_ON_MENU -%}
+                          {% for cat, null in categories %}
+                             <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                           {% endfor %}
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
 </div>      
 
 <!-- End Nav -->
@@ -98,16 +96,16 @@
                 <div id="welcome" class="parrallax header">
                     <div class="row">
                         <div class="large-8 medium-10 medium-centered large-centered columns">
-                           <div class="large-2 medium-2 large-centered medium-centered columns" style="text-align: center;">
+                           <div class="medium-2 medium-centered columns" style="text-align: center;">
                                 {% if SITEGRAVATAR %}<img src="{{ SITEGRAVATAR }}" alt="{{ SITENAME }}" />{% endif %}
                            </div>
                           <h1>Welcome to {{ SITENAME }}</h1>
                           <p>{{ SITE_DESCRIPTION }}</p>
                           
-                          <div class="large-8 large-centered columns" style="margin-top: 15px;">
+                          <div class="medium-12 medium-centered columns" style="margin-top: 15px;">
                         <div class="row collapse">
                          <form action="{{ SITEURL }}/search.html" onsubmit="return validateForm(this.elements['q'].value);"> 
-                            <div class="large-10 medium-10 large-centered medium-centered columns">
+                            <div class="medium-10 medium-centered columns">
                                 <input type="text" placeholder="" class="search-query" name="q" id="tipue_search_input"/>
                             </div>
                          </form> 
@@ -130,7 +128,7 @@
 <!-- Footer -->
 <div id="footer">
     <footer class="row">
-            <div class="large-3 medium-3 small-6 columns">
+            <div class="medium-3 small-6 columns">
                 <h6>Site Map</h6>
                 <ul>
                 <li><a href="{{ SITEURL }}/archives.html">Archives</a></li>
@@ -138,7 +136,7 @@
                 <li><a href="{{ SITEURL }}/categories.html">Categories</a></li>
                 </ul>
             </div>
-            <div class="large-3 medium-3 small-6 columns">
+            <div class="medium-3 small-6 columns">
              {% if categories %}
                 <h6>Categories</h6>
                     <ul>
@@ -148,7 +146,7 @@
                     </ul>
              {% endif %} 
             </div>
-            <div class="large-3 medium-3 small-6 columns">
+            <div class="medium-3 small-6 columns">
                 {% if LINKS %}
                     <h6>Links</h6>
                     <ul>
@@ -158,7 +156,7 @@
                     </ul>
                 {% endif %} 
             </div>
-            <div class="large-3 medium-3 small-6 columns">
+            <div class="medium-3 small-6 columns">
                 {% if SOCIAL %}
                     <h6>Social</h6>
                     <ul>
@@ -175,7 +173,7 @@
                 {% endif %}
             </div>
             <hr>
-            <div class="large-6 medium-6 columns">
+            <div class="medium-6 columns">
                     {% if VCARD %}
                         {% include 'hcard.html' %}
                     {% else %}
@@ -184,7 +182,7 @@
                     {% endif %}
                 </ul>                                                                            
             </div>
-            <div id ="colophon" class="large-6 medium-6 hide-for-small columns">
+            <div id ="colophon" class="medium-6 hide-for-small columns">
                 {% if USE_COLOPHON %}
                   {% include 'colophon.html' %}
                 {% else %}
@@ -200,7 +198,8 @@
     </footer>
 </div>
 {% block js_script %}
-<script src="{{ SITEURL }}/{{THEME_STATIC_DIR}}/js/vendor/jquery.js"></script>
+<script src="{{ SITEURL }}/{{THEME_STATIC_DIR}}/js/vendor/jquery.min.js"></script>
+<script src="{{ SITEURL }}/{{THEME_STATIC_DIR}}/js/vendor/what-input.min.js"></script>
 <script src="{{ SITEURL }}/{{THEME_STATIC_DIR}}/js/foundation.min.js"></script>
 <script>
  $(document).foundation();

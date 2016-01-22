@@ -2,7 +2,7 @@
 {% block welcome %}{% endblock %}
 
 {% block content %}
-    <div id="category" class="large-10 medium-10 medium-centered large-centered columns">
+    <div id="category" class="medium-10 medium-centered columns">
         <h3>Categories</h3>
         {% for category, articles in categories %}
             <h6 class="subheader"><a href="{{ category.url }}">{{ category }}</a></h6>
