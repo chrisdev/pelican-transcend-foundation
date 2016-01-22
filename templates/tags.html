@@ -3,7 +3,7 @@
 {% block content %}
 
 
-<div id="label" class="large-10 medium-10 medium-centered large-centered columns">
+<div id="label" class="medium-10 medium-centered columns">
     <h3>Tags</h3>
     {% for tag, articles in tags|sort %}
         <span class="label secondary round"><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></span> 

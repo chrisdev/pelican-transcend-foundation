@@ -1,19 +1,18 @@
 {% if DEFAULT_PAGINATION %}
-<div class="pagination-centered">
+<ul class="pagination text-center" role="navigation" aria-label="Pagination">
 <h6 class="subheader">Page {{ articles_page.number }} of {{ articles_paginator.num_pages }}</h6>
 
-<p>
     {% if articles_page.has_previous() %}
         {% if articles_page.previous_page_number() == 1 %}
-            <a href="{{ SITEURL }}/{{ page_name }}.html">&laquo; Prev</a>
+            <li><a href="{{ SITEURL }}/{{ page_name }}.html">&laquo; Prev</a></li>
         {% else %}
-            <a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html">&laquo; Prev</a>
+            <li><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html">&laquo; Prev</a></li>
         {% endif %}
     {% endif %}
 
     {% if articles_page.has_next() %}
-        <a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html">Next &raquo;</a>
+        <li><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html">Next &raquo;</a></li>
     {% endif %}
-</p>
-</div>
+
+</ul>
 {% endif %}
