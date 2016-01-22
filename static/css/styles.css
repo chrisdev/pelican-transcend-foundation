@@ -82,7 +82,7 @@ footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
 #header h1 a {color: #08C;}
 #logo {padding-top: 15px;padding-bottom: 15px;}
 #header img {min-width: 260px;}
-.top-bar {background: #08C;}
+.top-bar {background: #08C;padding: 3px;}
 .social {padding-bottom: 15px;}
 .social a {color: #2980b9;}
 
@@ -98,7 +98,7 @@ footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
 
 .info {padding-top: 4px;padding-bottom: 4px; margin-bottom: 5px;}
 .info .label {margin-top: 8px; margin-bottom: 8px;}
-.info li {font-size: 11.5px; color: #a5a5a5; padding-bottom: 0;}
+.info li {list-style: none;font-size: 13px; color: #a5a5a5; padding-bottom: 0;}
 .info li strong {color: #08C;}
 .info span a {color: #fff; font-weight: 500;}
 
@@ -117,7 +117,7 @@ ul.square li {font-size: 13px; font-variant: normal;}
 
 #welcome img {min-width: 80px; border-radius: 50%; margin-bottom: 10px;}
 #welcome p { font-size: 16px;}
-#welcome {background-image: url("../images/parallax.jpg");background-attachment: fixed; height: 300px; padding-top: 50px;}
+#welcome {background-image: url("../images/parallax.jpg");background-attachment: fixed; height: 300px; padding-top: 20px;}
 
 #welcome input[type="text"], textarea {border-radius:4px;}
 

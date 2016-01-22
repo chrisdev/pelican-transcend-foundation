@@ -65,8 +65,10 @@
         
         <div class="top-bar" id="menu">
             <div class="row">
-                <div class="medium-8 medium-centered columns">
-                  <ul class="menu expanded medium-horizontal text-center">
+                <div class="medium-4 medium-centered columns">
+                  <ul class="menu expanded vertical medium-horizontal text-center">
+                      <li><a href="{{ link }}">Test</a></li>
+                      <li><a href="{{ link }}">Test 1</a></li>
                         {% for title, link in MENUITEMS %}
                             <li><a href="{{ link }}">{{ title }}</a></li>
                         {% endfor %}

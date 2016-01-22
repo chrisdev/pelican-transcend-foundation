@@ -5,18 +5,19 @@
 {% block content %}
 <article>
     <h1 class="article-title">{{ article.title}}</h1>
-    <div class="info hide-for-small">
+    <div class="info hide-for-small-only">
         <div class="small-up-3">
-            <div class="column" style="padding-left: 0;"><i class="fa fa-clock-o"></i>&nbsp;{{ article.locale_date }}</div>
-            <div class="column"><i class="fa fa-user"></i>&nbsp;By:&nbsp;<a href="{{ SITEURL }}/{{ article.author.url }}"><strong>{{ article.author }}</strong></a></div>
-            <div class="column"><i class="fa fa-list-alt"></i>&nbsp;Category:&nbsp;<a href="{{ SITEURL }}/{{ article.category.url }}"><strong>{{ article.category }}</strong></a></div>
+            <div class="column" style="padding-left: 0;"><li><i class="fa fa-clock-o"></i>&nbsp;{{ article.locale_date }}</li></div>
+            <div class="column"><li><i class="fa fa-user"></i>&nbsp;By:&nbsp;<a href="{{ SITEURL }}/{{ article.author.url }}"><strong>{{ article.author }}</strong></a></li></div>
+            <div class="column"><li><i class="fa fa-list-alt"></i>&nbsp;Category:&nbsp;<a href="{{ SITEURL }}/{{ article.category.url }}"><strong>{{ article.category }}</strong></a></li></div>
         </div>
         <div class="small-up-1 tags">
             {% if article.tags %}
-                <div class="column" style="padding-left: 0;"><i class="fa fa-thumb-tack"></i>&nbsp;Tags&nbsp;
+                <div class="column" style="padding-left: 0;"><li><i class="fa fa-thumb-tack"></i>&nbsp;Tags&nbsp;
                     {% for tag in article.tags %} 
                         <span class="label secondary round"><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></span>
                      {% endfor %}
+                 </li>
                 </div>
             {% endif %}
         </div>
