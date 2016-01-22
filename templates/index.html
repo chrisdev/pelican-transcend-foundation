@@ -10,18 +10,19 @@
         {% if loop.first and not articles_page.has_previous() %}
             <article>
                 <h4 class="article-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h4>
-                <div class="info hide-for-small">
-                    <div class="medium-up-3">
-                        <div class="column" style="padding-left: 0;"><i class="fa fa-clock-o"></i>&nbsp;{{ article.locale_date }}</li></div>
-                        <div class="column"><i class="fa fa-user"></i>&nbsp;By:&nbsp;<a href="{{ SITEURL }}/{{ article.author.url }}"><strong>{{ article.author }}</strong></a></div>
-                        <div class="column"><i class="fa fa-list-alt"></i>&nbsp;Category:&nbsp;<a href="{{ SITEURL }}/{{ article.category.url }}"><strong>{{ article.category }}</strong></a></div>
+                <div class="info hide-for-small-only">
+                    <div class="small-up-3">
+                        <div class="column" style="padding-left: 0;"><li><i class="fa fa-clock-o"></i>&nbsp;{{ article.locale_date }}</li></div>
+                        <div class="column"><li><i class="fa fa-user"></i>&nbsp;By:&nbsp;<a href="{{ SITEURL }}/{{ article.author.url }}"><strong>{{ article.author }}</strong></a></li></div>
+                        <div class="column"><li><i class="fa fa-list-alt"></i>&nbsp;Category:&nbsp;<a href="{{ SITEURL }}/{{ article.category.url }}"><strong>{{ article.category }}</strong></a></li></div>
                     </div>
                     <div class="small-up-1 tags">
                         {% if article.tags %}
-                            <div class="column" style="padding-left: 0;"><i class="fa fa-thumb-tack"></i>&nbsp;Tags&nbsp;
+                            <div class="column" style="padding-left: 0;"><li><i class="fa fa-thumb-tack"></i>&nbsp;Tags&nbsp;
                                 {% for tag in article.tags %} 
                                     <span class="label round"><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></span>
                                  {% endfor %}
+                                 </li>
                             </div>
                         {% endif %}
                     </div>
@@ -31,7 +32,7 @@
                 </div>
                 {{ article.summary }}
                 {% include 'comments.html' %}
-                <a class="button radius tiny right" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
+                <a class="button small float-right" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
             </article>
 
             {% if loop.length == 1 %}
@@ -45,17 +46,17 @@
 
             <article id="feed">
                 <h4 class="article-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h4>
-                <div class="info hide-for-small">
-                    <div class="medium-up-3">
-                        <div class="column" style="padding-left: 0;"><i class="fa fa-clock-o"></i>&nbsp;{{ article.locale_date }}</div>
-                        <div class="column"><i class="fa fa-user"></i>&nbsp;By:&nbsp;<a href="{{ SITEURL }}/{{ article.author.url }}"><strong>{{ article.author }}</strong></a></div>
-                        <div class="column"><i class="fa fa-list-alt"></i>&nbsp;Category:&nbsp;<a href="{{ SITEURL }}/{{ article.category.url }}"><strong>{{ article.category }}</strong></a></div>
+                <div class="info hide-for-small-only">
+                    <div class="small-up-3">
+                        <div class="column" style="padding-left: 0;"><li><i class="fa fa-clock-o"></i>&nbsp;{{ article.locale_date }}</li></div>
+                        <div class="column"><li><i class="fa fa-user"></i>&nbsp;By:&nbsp;<a href="{{ SITEURL }}/{{ article.author.url }}"><strong>{{ article.author }}</strong></a></li></div>
+                        <div class="column"><li><i class="fa fa-list-alt"></i>&nbsp;Category:&nbsp;<a href="{{ SITEURL }}/{{ article.category.url }}"><strong>{{ article.category }}</strong></a></li></div>
                     </div>
                     <div class="small-up-1 tags">
                         {% if article.tags %}
-                            <div class="column" style="padding-left: 0;"><i class="fa fa-thumb-tack"></i>&nbsp;Tags&nbsp;
+                            <div class="column" style="padding-left: 0;"><li><i class="fa fa-thumb-tack"></i>&nbsp;Tags&nbsp;
                                 {% for tag in article.tags %} 
-                                    <span class="label round"><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></span>
+                                    <span class="label round"><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></span></span>
                                  {% endfor %}
                             </div>
                         {% endif %}
@@ -63,7 +64,7 @@
                 </div>
                 {{ article.summary }}
                 {% include 'comments.html' %}
-                <a class="button radius tiny right" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
+                <a class="button small float-right" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
             </article>
             
            <hr />
