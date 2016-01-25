@@ -26,9 +26,12 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
 }
 
+.label, .button {background: #28CA80; border-radius: 2px;}
+.label:hover, .button:hover {background: #5e9cd1;}
+
 h1 {font-size: 1.7rem; }
-a {color: #08C;}
-a:hover {color: #0072ab;}
+a {color: #5e9cd1;}
+a:hover {color: #28CA80;}
 .subheader {color: #707070;}
 
 .scrollup {width: 30px;height: 30px;position: fixed;bottom: 15px;right: 15px;display: none;text-indent: -9999px;background: url('../images/scroll.png') center center no-repeat rgba(0, 135, 204, 0.8);border-radius: 50%;}
@@ -39,7 +42,7 @@ article p, li {
     font-family: Helvetica, sans-serif;
 }
 
-article h2 {font-size: 1.4rem; color: #08C;}
+article h2 {font-size: 1.4rem; color: #5e9cd1;}
 article h4 {margin-bottom: 3px;}
 article img {border-radius: 8px; margin-bottom: 10px;}
 article table {margin-top: 10px;}
@@ -55,9 +58,9 @@ div.panel {background: #fff; border: 1px solid #DDD;}
 #content {min-height: 500px;}
 
 ul.info {margin-left: 0; border: 0;padding: 0;margin-bottom: 0px;}
-ul.info li {list-style: none; font-size: 13px; color: #8d9095;}
-ul.info li a {color: #08C;}
-ul.info li a i {color: #08C; margin-right: 3px;}
+ul.info li {list-style: none; font-size: 13.5px; color: #8d9095;}
+ul.info li a {color: #5e9cd1;}
+ul.info li a i {color: #5e9cd1; margin-right: 3px;}
 
 
 ul.info li.name {font-size: 16px;}
@@ -70,7 +73,7 @@ ul.info li.name {font-size: 16px;}
 footer.row ul {margin-left: 0;}
 footer.row h6 {color: #fff;}
 footer.row a {color: #CCC;}
-footer.row a:hover {color: #08C;}
+footer.row a:hover {color: #5e9cd1;}
 footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
 
 
@@ -79,17 +82,16 @@ footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
     padding: 10px 0 0;
     border-bottom: 1px solid #CCC;}
 #header h1 {font-size: 1.8rem;font-family: 'Open Sans', cursive; text-align: center; font-weight: 800}
-#header h1 a {color: #08C;}
-#logo {padding-top: 15px;padding-bottom: 15px;}
+#header h1 a {color: #5e9cd1;}
+#logo {padding-top: 5px;padding-bottom: 5px;}
 #header img {min-width: 260px;}
-.top-bar {background: #08C;padding: 3px;}
-.social {padding-bottom: 15px;}
+.top-bar {background: #5e9cd1;padding: 3px;}
 .social a {color: #2980b9;}
 
 
 #sidebar .panel {padding: 12px;}
 #sidebar ul {margin-left: 0;}
-#sidebar h6{font-variant: small-caps; font-size: 13px; font-weight: 600;color: #08C; margin-bottom: 5px; text-align: center;}
+#sidebar h6{font-variant: small-caps; font-size: 13px; font-weight: 600;color: #5e9cd1; margin-bottom: 5px; text-align: center;}
 #sidebar li {font-size: 12px; margin-top: 5px; margin-bottom: 5px;list-style: none; padding-left: 0;}
 #sidebar li a {padding: 0; color: #707070;}
 #sidebar ul li a:hover {color: #404040;}
@@ -99,7 +101,7 @@ footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
 .info {padding-top: 4px;padding-bottom: 4px; margin-bottom: 5px;}
 .info .label {margin-top: 8px; margin-bottom: 8px;}
 .info li {list-style: none;font-size: 13px; color: #a5a5a5; padding-bottom: 0;}
-.info li strong {color: #08C;}
+.info li strong {color: #5e9cd1;}
 .info span a {color: #fff; font-weight: 500;}
 
 ul.circle li {font-size: 18px; font-weight: 500; font-variant: small-caps;}
@@ -110,7 +112,7 @@ ul.square li {font-size: 13px; font-variant: normal;}
 
 
 .parrallax {position: relative;width: 100%;box-sizing: border-box;box-shadow: 0 -1px 10px rgba(0, 0, 0, .5);transform-style: inherit; margin-bottom: 20px;}
-.parrallax:before {content: "";position: absolute;top: 0;bottom: 0;left:0;right:0; background: url('../images/overlays/06.png') repeat rgba(0, 0, 0, 0.4);
+.parrallax:before {content: "";position: absolute;top: 0;bottom: 0;left:0;right:0;
 }
 .parrallax h1, .parrallax p {text-align: center; color: #fff;}
 .parrallax h1 {color: #fff;font-size: 1.8rem;font-family: 'Open Sans'; font-weight: 800;}
