@@ -50,11 +50,12 @@
         <div class="medium-12 columns hide-for-small">
             {% if USE_SITE_LOGO %}
                 <div class="medium-4 medium-centered columns text-center">
-                    <img src="{{ SITE_URL }}/{{ THEME_STATIC_DIR }}/images/site_logo.png" alt="{{ SITENAME }}" />
+                    <a href="/">
+                        <img src="{{ SITE_URL }}/{{ THEME_STATIC_DIR }}/images/site_logo.png" alt="{{ SITENAME }}" />
+                    </a>
                 </div>
             {% else %}
                  <h1><a href="/">{{ SITENAME }}</a></h1>
-
             {% endif %}
         </div>
     </div>
