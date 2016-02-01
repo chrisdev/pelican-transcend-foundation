@@ -34,7 +34,7 @@ a {color: #5e9cd1;}
 a:hover {color: #28CA80;}
 .subheader {color: #707070;}
 
-.scrollup {width: 30px;height: 30px;position: fixed;bottom: 15px;right: 15px;display: none;text-indent: -9999px;background: url('../images/scroll.png') center center no-repeat rgba(0, 135, 204, 0.8);border-radius: 50%;}
+.scrollup {width: 30px;height: 30px;position: fixed;bottom: 15px;right: 15px;display: none;text-indent: -9999px;background: url('../images/scroll.png') center center no-repeat rgba(40, 202, 127, 0.85);border-radius: 50%;}
 
 article h1 {color: #505050;}
 
@@ -86,6 +86,7 @@ footer.row li, footer.row p {font-size: 13px; color: #fff;list-style: none;}
 #logo {padding-top: 5px;padding-bottom: 5px;}
 #header img {min-width: 260px;}
 .top-bar {background: #5e9cd1;padding: 3px;}
+.title-bar {background: #5e9cd1;}
 .social a {color: #2980b9;}
 
 
